@@ -1,14 +1,89 @@
 @charset "UTF-8";
-
-@import "normalize";
 @import "variables";
-@import "fonts";
 @import "mixins";
-@import "core";
 
-@import "blocks/header";
-@import "blocks/menu";
-@import "blocks/banner";
-@import "blocks/advantages";
-@import "blocks/works";
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: $bgColor;
+    position: relative;
+}
+
+.wrap-first-form, .wrap-second-form {
+    @include wrapFormView;
+}
+
+form.form-1-step, form.form-2-step {
+    @include formView; 
+}
+
+.form-input, .form-submit-button, .form-option {
+    @include fontForm;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: $formGroupMargin;
+}
+
+.form-input, .form-option {
+    @include formInput;
+}
+
+.form-submit-button {
+    @include buttonSubmit;
+}
+
+label.error {
+    @include error;
+}
+
+// Form 2
+.wrap-second-form {
+    // position: absolute;
+    // top: 1000px;
+    display: none;
+}
+
+// Select
+.select {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.select::after {
+    content: '';
+    display: block;
+
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 1;
+    margin-top: -3px;
+    pointer-events: none;
+}
+
+.select select {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid #ccc;
+    appearance: none;
+    @include formView;
+    @include formInput;
+}
 

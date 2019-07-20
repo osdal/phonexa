@@ -1,5 +1,22 @@
-$black: #000;
-$white: #fff;
+$bgColor: #cdcacf;
+$formWidth: 400px;
+$formPadding: 40px;
+$bgFormColor: #fff;
+$borderFormRadius: 10px;
+$fontSizeForm: 16px;
+$fontFamilyForm: sans-serif;
+$letterSpacingForm: normal;
 
-$primary: #252525;
-$second: #cc3333;
+$formGroupMargin: 10px;
+
+$formInputWidth: 100%;
+$formInputPadding: 10px;
+
+$buttonSubmitWidth: 100px;
+$buttonSubmitHeight: 50px;
+$buttonSubmitBorderRadius: 10px;
+$buttonSubmitColor: #fff;
+$buttonSubmitBgColor: #0071f0;
+$buttonSubmitCursor: pointer;
+$buttonSubmitMarginTop: 20px;
+$buttonSubmitMarginLeft: ($formWidth - $buttonSubmitWidth)/2;

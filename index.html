@@ -1,206 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Exe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.min.css" type="text/css" />
-    <script src="js/all.min.js"></script>
+    <title>Form</title>
 </head>
 <body>
-<div class="container">
-    <header class="header">
-        <div class="wrap header__wrap">
-            <a href="#" class="header__logo">
-                <img src="img/logo.png" alt="Логотип">
-            </a>
-            <nav>
-                <ul class="menu header__menu">
-                    <li class="menu__element">
-                        <a class="menu__link" href="#"> Home</a>
-                    </li>
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">Features</a>
-                    </li> 
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">Portfolio</a>
-                    </li>
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">SKILLS</a>
-                    </li>
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">Blog</a>
-                    </li>
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">CLIENTS</a>
-                    </li>
-                    <li class="menu__element">
-                        <a class="menu__link" href="#">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="container">
+        <div class="wrap-first-form">
+            <form action="" class="form-1-step" id="firstForm">
+                <p class="form-title">Register a new user</p>
+                <div class="form-group">
+                    <input class="form-input" type="text" name="firstName" placeholder="First Name*" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="text" name="lastName" placeholder="Last Name*" required> 
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="text" name="login" placeholder="Login*" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="email" name="email" placeholder="Email*" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="text" name="companyName" placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="password" id="password" name="password"  placeholder="Password*" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-input" type="password" id="password_again" name="password_again" placeholder="Confirm password*" required>
+                </div>
+                <div class="form-group">
+                    <div class="form-submit-button-wrap"> 
+                        <button class="form-submit-button" id="button-form-1" type="submit" class="form-button-submit">Next step</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </header>
-    <section class="banner">
-        <div class="banner__wrap wrap">
-            <div class="banner__info">
-                <h1 class="banner__title">Smart Moves <span class="banner__litle">of <span class="banner__red">Successful</span> Business</span> </h1>
-                <p class="banner__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                <button class="banner__button">Buy This Now</button>
-                <button class="banner__button banner__button--last">Live Preview</button>
-            </div>
-        </div>
-    </section>
+        <!-- Step2 -->
+        <div class="wrap-second-form">
+            <form action="" class="form-2-step" id="secondForm">
+                <p class="form-title">Choose your specialization</p>
+                <div class="select">
+                    <select>
+                        <option class="form-option">Пункт 1</option>
+                        <option>Пункт 2</option>
+                    </select>
+                </div>
 
-    <section class="advantages">
-        <h2 class="advantages__title">Преимущества</h2>
-        <ul class="advantages__list wrap">
-            <li class="advantages__item">
-                <div class="advantages__img">
-                    <svg class="advantages__svg">
-                        <use xLink:href="img/symbol/sprite.svg#leaf"> </use>
-                    </svg>
-                </div>
-                <p class="advantages__subtitle">Clean Design</p>
-                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam.</p>
-            </li>
-            <li class="advantages__item">
-                <div class="advantages__img">
-                    <svg class="advantages__svg">
-                        <use xLink:href="img/symbol/sprite.svg#badge"> </use>
-                    </svg>
-                </div>
-                <p class="advantages__subtitle">Branding</p>
-                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam.</p>
-            </li>
-            <li class="advantages__item">
-                <div class="advantages__img">
-                    <svg class="advantages__svg">
-                        <use xLink:href="img/symbol/sprite.svg#smartphone"> </use>
-                    </svg>
-                </div>
-                <p class="advantages__subtitle">Responsive</p>
-                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam.</p>
-            </li>
-            <li class="advantages__item">
-                <div class="advantages__img">
-                    <svg class="advantages__svg">
-                        <use xLink:href="img/symbol/sprite.svg#settings-work-tool"> </use>
-                    </svg>
-                </div>
-                <p class="advantages__subtitle">Development</p>
-                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam.</p>
-            </li>
-        </ul>
-    </section>
-    <section class="works">
-        <h2 class="works__title-hide">Our works</h2>
-        <ul class="works__list wrap">
-            <li class="works__element works__element--three">
-                <p class="works__title">See Our Recent Work</p>
-                <p class="works__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Claritas est etiam processus dynamicus.</p>
-            </li>
-            <li class="works__element works__element--six">
-                <div class="works__info">
-                    <p class="works__name">Claritas Est Processus</p>
-                    <p class="works__deckription">Graphic Designer, Photoshop</p>
-                    <div class="works__btns">
-                        <button aria-label="Увеличить работу" class="works__zoom">
-                            <svg>
-                                <use xLink:href="img/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-                        <a aria-label="Посмотреть работу" href="#" class="works__link">
-                                <svg>
-                                <use xLink:href="img/symbol/sprite.svg#link"></use>
-                            </svg>
-                        </a>
+                <div class="form-group">
+                    <div class="form-submit-button-wrap"> 
+                        <button class="form-submit-button" type="submit" class="form-button-submit">Next step</button>
                     </div>
                 </div>
-            </li>
-            <li class="works__element works__element--three">
-                <div class="works__info">
-                    <p class="works__name">Claritas Est Processus</p>
-                    <p class="works__deckription">Graphic Designer, Photoshop</p>
-                    <div class="works__btns">
-                        <button aria-label="Увеличить работу" class="works__zoom">
-                            <svg>
-                                <use xLink:href="img/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-                        <a aria-label="Посмотреть работу" href="#" class="works__link">
-                                <svg>
-                                <use xLink:href="img/symbol/sprite.svg#link"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li class="works__element works__element--three">
-                <div class="works__info">
-                    <p class="works__name">Claritas Est Processus</p>
-                    <p class="works__deckription">Graphic Designer, Photoshop</p>
-                    <div class="works__btns">
-                        <button aria-label="Увеличить работу" class="works__zoom">
-                            <svg>
-                                <use xLink:href="img/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-                        <a aria-label="Посмотреть работу" href="#" class="works__link">
-                                <svg>
-                                <use xLink:href="img/symbol/sprite.svg#link"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li class="works__element works__element--five">
-                <div class="works__info">
-                    <p class="works__name">Claritas Est Processus</p>
-                    <p class="works__deckription">Graphic Designer, Photoshop</p>
-                    <div class="works__btns">
-                        <button aria-label="Увеличить работу" class="works__zoom">
-                            <svg>
-                                <use xLink:href="img/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-                        <a aria-label="Посмотреть работу" href="#" class="works__link">
-                                <svg>
-                                <use xLink:href="img/symbol/sprite.svg#link"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li class="works__element works__element--four">
-                <div class="works__info">
-                    <p class="works__name">Claritas Est Processus</p>
-                    <p class="works__deckription">Graphic Designer, Photoshop</p>
-                    <div class="works__btns">
-                        <button aria-label="Увеличить работу" class="works__zoom">
-                            <svg>
-                                <use xLink:href="img/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-                        <a aria-label="Посмотреть работу" href="#" class="works__link">
-                                <svg>
-                                <use xLink:href="img/symbol/sprite.svg#link"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            
-        </ul>
-    </section>
-    <section class="responsive">
-        <div class="responsive__wrap wrap">
-            <div class="responsive__information">
-                <h2 class="responsive__title">FULLY RESPONSIVE DESIGN READY</h2>
-            </div>>
-        </div>>
-    </section>
-</div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/all.min.js"></script>
+    
+    
 </body>
 </html>
-
