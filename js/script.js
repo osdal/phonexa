@@ -1,5 +1,3 @@
-// import { data } from  '../js/data1';
-
 $(document).ready(function(){
 
     // Validation
@@ -42,7 +40,6 @@ $(document).ready(function(){
                 firstName: {
                     required: 'Обязательное поле',
                     minlength: 'Минимум три символа',
-                    // name: 'Вы ввели запрещенный символ'
                 },
                 lastName: {
                     required: 'Обязательное поле',
@@ -56,12 +53,11 @@ $(document).ready(function(){
         firstFormWidth = $('.wrap-first-form').outerWidth(),
         secondFormWidth = $('.wrap-second-form').outerWidth();
 
-    $('#button-form-1').on('click', fGo); //событие на клик кнопки
-   
+    $('#button-form-1').on('click', fGo);    
         
             function fGo(){
-                if($('#firstForm').valid()){
-                    event.preventDefault(); //отключаем стандартную реакцию браузера
+                if(!$('#firstForm').valid()){
+                    event.preventDefault();
                     $('.wrap-first-form').offset({left: winWidth/2});
                     $('.wrap-first-form').animate({left: (winWidth/2+firstFormWidth)}, 2000);
                     
@@ -71,17 +67,56 @@ $(document).ready(function(){
                 }
             }
         
+
+            $.ajax({
+                url: '../data/data1.json',
+                dataType: 'json',
+                type: 'get',
+                cash: false,
+                success: function(data) {
+                    $(data.departments).each(function(index, value) {
+                        let arr = Object.keys(value);
+                        for (let i of arr) {
+                            $('#specialization').append($("<option />").text(i).val(i));
+                        }
+   
+                        $('#specialization').on('change', function() {
+                            let selectedDepartment = this.value;
+                            let selectedVacancies = value[selectedDepartment];
+                            if(selectedDepartment == "departments"){
+                                $('#vacancy').prop('disabled', true);
+                                $('#button-form-2').prop('disabled', true);
+                                $('#vacancy option[value!="vacancy"]').remove();
+                            } else if((selectedDepartment != "departments")) {
+                                $('#vacancy').prop('disabled', false);
+                                $('#button-form-2').prop('disabled', true);
+                                $('#vacancy option[value!="vacancy"]').remove();
+                                if(selectedDepartment != 'departments' ) {
+                                    for(let i of selectedVacancies) {
+                                        $('#vacancy option[value="vacancy"]').after($('<option />').text(i).val(i));
+                                    }
+                                }
+                            } else if((selectedDepartment != "departments")&&($('#vacancy').val() != 'vacancy')) {
+                                $('#vacancy option[value!="vacancy"]').remove();
+                                $('#vacancy').prop('disabled', true);
+                                for(let i of selectedVacancies) {
+                                    $('#vacancy option[value="vacancy"]').after($('<option />').text(i).val(i));
+                                }
+                                $('#button-form-2').prop('disabled', true);
+                            } 
+                            
+                                                                
+                        });
+                                                            
+                        $('#vacancy').on('change', function() {
+                            (this.value =='vacancy')?($('#button-form-2').prop('disabled', true)):
+                                                                ($('#button-form-2').prop('disabled', false));
+                            console.log(this.value);
+                        });
+                    });
+                }
+            });
             
-// let data = $.parseJSON('data1.json');
-// console.log(data.name);
 
-
-$.getJSON('js/data1.json', function(data) {
-    console.log('work');
-});
-
-// var result = JSON.parse(JSON.stringify('../js/data.json'));
-// console.log(result);
-// });
 
 });    

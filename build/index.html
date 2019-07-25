@@ -45,15 +45,19 @@
             <form action="" class="form-2-step" id="secondForm">
                 <p class="form-title">Choose your specialization</p>
                 <div class="select">
-                    <select>
-                        <option class="form-option">Пункт 1</option>
-                        <option>Пункт 2</option>
+                    <select id="specialization">
+                        <option value="departments">Departments</option>
                     </select>
                 </div>
-
+                <div class="select">
+                    <select id="vacancy" disabled>
+                        <option value="vacancy">Vacancy</option>
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <div class="form-submit-button-wrap"> 
-                        <button class="form-submit-button" type="submit" class="form-button-submit">Next step</button>
+                        <button class="form-submit-button" id="button-form-2" disabled type="submit" class="form-button-submit">Next step</button>
                     </div>
                 </div>
             </form>

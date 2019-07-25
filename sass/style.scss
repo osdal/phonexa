@@ -59,7 +59,7 @@ label.error {
 // Select
 .select {
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: $marginBottomSelect;
 }
 
 .select::after {
@@ -87,3 +87,6 @@ label.error {
     @include formInput;
 }
 
+button:disabled {
+    opacity: 0.5;
+}
