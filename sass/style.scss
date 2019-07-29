@@ -14,14 +14,15 @@ body {
     overflow: hidden;
     height: 100vh;
     background-color: $bgColor;
-    position: relative;
+    // position: relative;
 }
 
-.wrap-first-form, .wrap-second-form {
+.wrap-first-form, .wrap-second-form, .wrap-third-form {
     @include wrapFormView;
+    position: absolute;
 }
 
-form.form-1-step, form.form-2-step {
+form.form-1-step, form.form-2-step, form.form-3-step {
     @include formView; 
 }
 
@@ -31,14 +32,25 @@ form.form-1-step, form.form-2-step {
 
 .form-title {
     text-align: center;
+    @include formView;
 }
 
 .form-group {
-    margin-bottom: $formGroupMargin;
+    margin-bottom: $formGroupMarginBottom;
 }
 
-.form-input, .form-option {
+.form-3-step .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-1-step .form-input, .form-2-step .form-input, .form-option {
     @include formInput;
+}
+
+.form-3-step .form-input, .form-3-step input:focus {
+    padding: $formInputPadding;
+    border: none;
 }
 
 .form-submit-button {
@@ -49,11 +61,23 @@ label.error {
     @include error;
 }
 
-// Form 2
-.wrap-second-form {
-    // position: absolute;
-    // top: 1000px;
+// Form 2,3
+.wrap-second-form, .wrap-third-form {
     display: none;
+}
+
+#thirdForm label {
+    font-weight: $labelFontWeigt;
+    margin-right: $labelformThirdMarginRight;
+}
+
+.buttons-third-form {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-third-form .form-submit-button {
+    margin-left: 0;
 }
 
 // Select

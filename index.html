@@ -10,8 +10,8 @@
 <body>
     <div class="container">
         <div class="wrap-first-form">
+            <p class="form-title">Register a new user</p>
             <form action="" class="form-1-step" id="firstForm">
-                <p class="form-title">Register a new user</p>
                 <div class="form-group">
                     <input class="form-input" type="text" name="firstName" placeholder="First Name*" required>
                 </div>
@@ -35,35 +35,75 @@
                 </div>
                 <div class="form-group">
                     <div class="form-submit-button-wrap"> 
-                        <button class="form-submit-button" id="button-form-1" type="submit" class="form-button-submit">Next step</button>
+                        <button class="form-submit-button" id="button-form-1" type="submit" >Next step</button>
                     </div>
                 </div>
             </form>
         </div>
         <!-- Step2 -->
         <div class="wrap-second-form">
+            <p class="form-title">Choose your specialization</p>
             <form action="" class="form-2-step" id="secondForm">
-                <p class="form-title">Choose your specialization</p>
                 <div class="select">
-                    <select id="specialization">
+                    <select id="specialization" name="department">
                         <option value="departments">Departments</option>
                     </select>
                 </div>
                 <div class="select">
-                    <select id="vacancy" disabled>
+                    <select id="vacancy" disabled name="jobTitle">
                         <option value="vacancy">Vacancy</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
                     <div class="form-submit-button-wrap"> 
-                        <button class="form-submit-button" id="button-form-2" disabled type="submit" class="form-button-submit">Next step</button>
+                        <button class="form-submit-button" id="button-form-2" disabled type="submit" >Next step</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Step3 -->
+        <div class="wrap-third-form">
+            <p class="form-title">Check your information</p>
+            <form action="" class="form-3-step" id="thirdForm">
+                <div class="form-group">
+                    <label for="firstName">Name:</label>
+                    <input class="form-input" type="text" name="firstName" placeholder="First Name*" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <input class="form-input" type="text" name="login" placeholder="Login*" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-input" type="email" name="email" placeholder="Email*" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company:</label>
+                    <input class="form-input" type="text" name="companyName" placeholder="Company name" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input class="form-input" type="text" name="department" placeholder="Company name" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title:</label>
+                    <input class="form-input" type="text" name="jobTitle" placeholder="Company name" readonly>
+                </div>
+                <p>Click send if everything correct.</p>
+                <p>Click edit if you see error.</p>
+                <div class="buttons-third-form">
+                    <div class="form-submit-button-wrap"> 
+                        <button class="form-submit-button" id="button-edit-form-3">Edit</button>
+                    </div>
+                
+                    <div class="form-submit-button-wrap"> 
+                        <button class="form-submit-button" id="button-submit-form-3" type="submit" >Send</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
     <script src="js/all.min.js"></script>
     
     
