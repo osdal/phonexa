@@ -1,12 +1,18 @@
-    // Submit Form 1 (Register a new user)
-    var winWidth = document.body.clientWidth,
-        firstFormWidth = $('.wrap-first-form').outerWidth(),
-        secondFormWidth = $('.wrap-second-form').outerWidth(),
-        thirdFormWidth = $('.wrap-third-form').outerWidth(),
-        resultKeys =[],
-        resultValues =[],
-        results ={};
+var winWidth = document.body.clientWidth,
+winHeight = document.body.clientHeight,
+firstFormWidth = $('.wrap-first-form').outerWidth(),
+secondFormWidth = $('.wrap-second-form').outerWidth(),
+thirdFormWidth = $('.wrap-third-form').outerWidth(),
+thirdFormHeight = $('.wrap-third-form').height(),
+resultKeys =[],
+resultValues =[],
+resultKeysFinal = [],
+resultValuesFinal =[],
+results ={},
+resultsFinal ={};
 
+  // Submit Form 1 (Register a new user)
+  
     $('#button-form-1').on('click', submitFirstForm);    
         
     function submitFirstForm(){
@@ -70,3 +76,22 @@ function submitSecondForm() {
 
    }
    
+   $('#button-submit-form-3').on('click', saveForm);
+
+   function saveForm() {
+    event.preventDefault();
+    let form3 = $('#thirdForm').serializeArray();
+        for(let i of form3) {
+            resultKeysFinal.push(i.name);
+            resultValuesFinal.push(i.value);
+        }
+        for(let k = 0; k < resultKeysFinal.length; k++) {
+            localStorage.setItem(resultKeysFinal[k], resultValuesFinal[k]);
+        }
+
+        $('#thirdForm')[0].reset();
+
+        $('.wrap-third-form').animate({top: winHeight + thirdFormHeight/2});
+        $('.thanks').show('slow');
+
+    }
